@@ -1,0 +1,298 @@
+
+---
+
+# TASK 7: GIT AND GITHUB NOTES
+
+## 1. What is Version Control System (VCS)?
+
+A Version Control System (VCS) is a software tool that helps developers track and manage changes made to files over time. It allows multiple people to work on the same project without overwriting each other’s work.
+
+### Types of VCS:
+
+1. Local Version Control System
+   Stores file versions on a local machine only. It is simple but not suitable for team collaboration.
+
+2. Centralized Version Control System (CVCS)
+   Uses a central server where all versions are stored. Developers access files from this central repository. Example: SVN.
+
+3. Distributed Version Control System (DVCS)
+   Each user has a complete copy of the repository, including history. It supports offline work and better collaboration. Example: Git.
+
+---
+
+## 2. What is Git and GitHub?
+
+### Git:
+
+Git is a distributed version control system used to track changes in source code during software development. It allows developers to work independently and merge changes later.
+
+Key Features:
+
+* Fast and efficient
+* Supports branching and merging
+* Works offline
+* Maintains complete project history
+
+### GitHub:
+
+GitHub is a web-based hosting platform for Git repositories. It provides additional features like collaboration tools, issue tracking, and code reviews.
+
+Key Features:
+
+* Remote repository hosting
+* Collaboration through pull requests
+* Version history tracking
+* Access control and team management
+
+---
+
+## 3. Git Three-Tree Architecture
+
+Git operates using three main areas:
+
+1. Working Directory
+   This is the current directory where project files are stored and edited.
+
+2. Staging Area (Index)
+   A temporary area where changes are prepared before committing. Files must be added to staging before committing.
+
+3. Repository (.git directory)
+   This is where Git permanently stores committed changes and version history.
+
+Flow:
+Working Directory → Staging Area → Repository
+
+---
+
+## 4. How to Create a GitHub Account
+
+Steps:
+
+1. Open the GitHub website in a browser.
+2. Click on “Sign Up”.
+3. Enter username, email address, and password.
+4. Verify your email address.
+5. Complete the setup process.
+6. Your account will be ready for use.
+
+---
+
+## 5. Install Git in Ubuntu
+
+Steps to install Git:
+
+1. Update package list:
+   sudo apt update
+
+2. Install Git:
+   sudo apt install git
+
+3. Verify installation:
+   git --version
+
+---
+
+## 6. Create a Project Locally and Push to GitHub
+
+Step 1: Create a project directory
+mkdir myproject
+cd myproject
+
+Step 2: Initialize Git repository
+git init
+
+Step 3: Create a file
+echo "Hello Git" > file.txt
+
+Step 4: Add file to staging area
+git add file.txt
+
+Step 5: Commit changes
+git commit -m "Initial commit"
+
+Step 6: Connect to GitHub repository
+git remote add origin [https://github.com/username/repository.git](https://github.com/username/repository.git)
+
+Step 7: Push code to GitHub
+git branch -M main
+git push -u origin main
+
+---
+
+## 7. Create a Project in GitHub and Clone to Local
+
+Step 1: Create repository in GitHub
+
+* Click “New Repository”
+* Enter repository name
+* Click “Create Repository”
+
+Step 2: Clone repository to local system
+git clone [https://github.com/username/repository.git](https://github.com/username/repository.git)
+
+Step 3: Move into project directory
+cd repository
+
+Step 4: Add files
+echo "My Notes" > notes.txt
+
+Step 5: Commit and push changes
+git add .
+git commit -m "Added notes"
+git push
+
+---
+
+# TASK 8 & 9: MAVEN NOTES
+
+## 1. Problems Without Build Tools
+
+* Manual handling of dependencies
+* Time-consuming compilation and packaging
+* Inconsistent builds across environments
+* Difficult project structure management
+* Hard to automate testing and deployment
+
+---
+
+## 2. What are Build Tools?
+
+Build tools are software tools that automate the process of building applications. They handle tasks such as compiling code, managing dependencies, running tests, and packaging applications.
+
+### Advantages of Build Tools:
+
+1. Automation of repetitive tasks
+2. Efficient dependency management
+3. Faster and reliable builds
+4. Standardized project structure
+
+### Examples of Build Tools:
+
+* Maven
+* Gradle
+* Ant
+* Make
+
+---
+
+## 3. What is Maven?
+
+Maven is a build automation and project management tool primarily used for Java projects. It uses a configuration file called POM.xml to manage project structure, dependencies, and build lifecycle.
+
+Features:
+
+* Dependency management
+* Standard directory structure
+* Automated build process
+* Integration with testing tools
+
+---
+
+## 4. Install Maven in Ubuntu
+
+Steps:
+
+1. Update system packages:
+   sudo apt update
+
+2. Install Maven:
+   sudo apt install maven
+
+3. Verify installation:
+   mvn -version
+
+---
+
+## 5. Maven Requirements
+
+* Java Development Kit (JDK 8 or higher)
+* JAVA_HOME environment variable must be set
+* Internet connection (for downloading dependencies)
+
+---
+
+## 6. Maven Repositories
+
+1. Local Repository
+   Located on the developer’s system at:
+   ~/.m2/repository
+
+2. Central Repository
+   Default remote repository used by Maven:
+   [https://repo.maven.apache.org/maven2](https://repo.maven.apache.org/maven2)
+
+3. Global Repository
+   Located inside Maven installation directory and shared across users
+
+---
+
+## 7. What is POM.xml?
+
+POM stands for Project Object Model. It is an XML file that contains configuration details of a Maven project.
+
+### Key Elements:
+
+1. Dependencies
+   Used to include external libraries required for the project.
+
+2. Plugins
+   Used to perform additional tasks like compilation and packaging.
+
+3. Surefire Plugin
+   Used to execute test cases during the test phase.
+
+---
+
+## 8. Maven Lifecycle
+
+Maven follows a lifecycle to build and manage projects.
+
+### Main Phases:
+
+1. validate
+   Validates project structure and configuration
+
+2. compile
+   Compiles the source code
+
+3. test
+   Runs unit tests
+
+4. package
+   Packages compiled code into JAR or WAR file
+
+5. install
+   Installs package into local repository
+
+6. deploy
+   Deploys package to remote repository
+
+---
+
+## 9. Create a Sample Maven Project
+
+Command:
+mvn archetype:generate
+
+Provide required details:
+
+* groupId (e.g., com.example)
+* artifactId (e.g., myapp)
+
+Maven will generate a project structure automatically.
+
+---
+
+## 10. Run Maven Commands
+
+Common Maven commands:
+
+mvn compile   – Compiles source code
+mvn test      – Runs test cases
+mvn package   – Creates package (JAR/WAR)
+mvn install   – Installs package into local repository
+
+---
+
+These notes are detailed, structured, and ready for submission. If you want, I can also format this into a proper document layout (with headings, spacing for Word/PDF).
+
